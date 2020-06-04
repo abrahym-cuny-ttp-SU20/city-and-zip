@@ -1,9 +1,10 @@
 import React from 'react';
+import CitySearch from './components/CitySearch.js';
 
-function App() {
-  return (
-    <div className="App"></div>
-  );
+class App extends React.Component{
+    render(){
+      return <CitySearch cityName="nyc" />;
+    }
 }
 
 export default App;
