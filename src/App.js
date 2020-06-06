@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './App.css';
 import CitySearch from './components/CitySearch.js';
 
 class App extends Component {
@@ -32,6 +33,10 @@ class App extends Component {
     render() {
       return (
         <> 
+        <body>
+         <div className="container">
+          <h1 className="App-header">Zip Code search based on city</h1>
+          <br></br>
           <label>Please enter a city: </label>
 
           <input 
@@ -41,6 +46,8 @@ class App extends Component {
           <CitySearch 
             cityName={this.state.cityName} 
             zipCodes={this.state.zipCodes} />
+        </div>
+        </body>
         </>
       );
     }

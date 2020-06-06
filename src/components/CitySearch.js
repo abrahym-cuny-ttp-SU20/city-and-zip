@@ -7,12 +7,13 @@ function CitySearch(props){
 
 	return (
 		<>
-			<h1>The zip codes in {(props.cityName)} are:< /h1>
-				
+		<div className="input-group-append">
+			<h2>The zip codes in {(props.cityName)} are:</h2>				
 			<ul>
 				{props.zipCodes.map(curZipCode => 
 					<li key={curZipCode}>{curZipCode}</li>) }
 			</ul>
+		</div>
 		</>
 	);
 }
