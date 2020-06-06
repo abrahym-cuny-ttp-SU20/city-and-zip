@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import CitySearch from './components/CitySearch.js';
+import React, { Component } from "react";
+import axios from "axios";
+import "./App.css";
+import CitySearch from "./components/CitySearch.js";
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -24,26 +25,28 @@ class App extends Component {
           cityName,
           zipCodes,
         });
-      }).catch(err => console.log(err));
+      })
+      .catch((err) => console.log(err));
+  };
 
+  render() {
+    return (
+      <>
+          <div className="container">
+            <h1 className="App-header">Zip Code search based on city</h1>
+            <br></br>
+            <label>Please enter a city: </label>
 
+            <input type="text" onChange={this.handleChange} />
+
+            <CitySearch
+              cityName={this.state.cityName}
+              zipCodes={this.state.zipCodes}
+            />
+          </div>
+      </>
+    );
   }
-
-    render() {
-      return (
-        <> 
-          <label>Please enter a city: </label>
-
-          <input 
-            type="text"
-            onChange={this.handleChange} />
-
-          <CitySearch 
-            cityName={this.state.cityName} 
-            zipCodes={this.state.zipCodes} />
-        </>
-      );
-    }
 }
 
 export default App;
